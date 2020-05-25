@@ -21,6 +21,14 @@ struct ContentView: View {
                     }
             }
             
+            MyListView(marvelComicBook: marvelComicData, dcComicBook: dcComicData)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.crop.circle.fill.badge.checkmark")
+                        Text("My List")
+                    }
+            }
+            
             WishListView(marvelComicBook: marvelComicData, dcComicBook: dcComicData)
                 .tabItem {
                     VStack {
@@ -28,6 +36,7 @@ struct ContentView: View {
                         Text("Wish List")
                     }
             }
+            
             
             
         }
