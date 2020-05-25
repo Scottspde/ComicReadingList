@@ -1,19 +1,18 @@
 //
-//  ContentView.swift
+//  AppView.swift
 //  ComicReadingList
 //
-//  Created by Scott Speedie on 18/05/2020.
+//  Created by Scott Speedie on 25/05/2020.
 //  Copyright © 2020 ScottSpeedie. All rights reserved.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    
+struct AppView: View {
     var body: some View {
         
         TabView {
-            FullListView(marvelComicBook: marvelComicData, dcComicBook: dcComicData)
+            ContentView()
                 .tabItem {
                     VStack {
                         Image(systemName: "book.fill")
@@ -21,7 +20,7 @@ struct ContentView: View {
                     }
             }
             
-            WishListView(marvelComicBook: marvelComicData, dcComicBook: dcComicData)
+            WishListView()
                 .tabItem {
                     VStack {
                         Image(systemName: "eye.fill")
@@ -31,13 +30,14 @@ struct ContentView: View {
             
             
         }
-        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct AppView_Previews: PreviewProvider {
+    
+    static let wishList = WishList()
     
     static var previews: some View {
-        ContentView()
+        AppView().environmentObject(wishList)
     }
 }
