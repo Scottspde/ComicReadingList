@@ -28,7 +28,6 @@ struct ComicContentView: View {
                     .padding()
             }
             .navigationBarTitle(Text(comicBook.name))
-            .listStyle(GroupedListStyle())
         }
     }
 }

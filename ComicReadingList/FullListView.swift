@@ -44,6 +44,7 @@ struct FullListView: View {
                         }
                 }
                 
+                
                 Section(header: Text("DC")
                     .font(.headline)){
                         ForEach(dcComicBook) { comic in
